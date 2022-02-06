@@ -5,10 +5,9 @@ import com.TheTrueHooha.Model.Employee;
 import com.TheTrueHooha.Service.EmployeeService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping ("/api/employees")
@@ -22,10 +21,16 @@ public class EmployeeController {
         this.employeeService = employeeService;
     }
 
-    //creates employee rest api
+    // a post API that creates employee into the database
     @PostMapping //handles post http request
     public ResponseEntity<Employee> saveEmployee( @RequestBody Employee employee) {
         return new ResponseEntity<Employee>(employeeService.saveEmployee(employee),
                 HttpStatus.CREATED);
+    }
+
+    //GET method to get all the employees from the database
+    @GetMapping
+    public List <Employee> getAllEmployees() {
+        return employeeService.getAllEmployees();
     }
 }
