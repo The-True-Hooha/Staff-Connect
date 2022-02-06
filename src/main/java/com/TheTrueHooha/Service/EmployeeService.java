@@ -9,4 +9,7 @@ public interface EmployeeService {
 
     //method that returns the list fof employees
     List <Employee> getAllEmployees();
+
+    //method that return the employee but by ID
+    Employee getEmployeeById (long Id);
 }
