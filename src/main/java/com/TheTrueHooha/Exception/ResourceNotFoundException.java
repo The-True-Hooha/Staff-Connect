@@ -1,7 +1,16 @@
 package com.TheTrueHooha.Exception;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ResponseStatus;
+
+@ResponseStatus (value = HttpStatus.NOT_FOUND) //responds with a http status to the client
 public class ResourceNotFoundException extends RuntimeException {
     //custom exception that returns a "do not exist " to the client when not in the database
+    /**
+     *
+     */
+
+    private static final long serialVersionUID = 1L;
     private String resourceName;
     private String fieldName;
     private Object fieldValue;
