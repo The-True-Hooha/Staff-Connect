@@ -42,11 +42,15 @@ public class EmployeeController {
     }
 
 
-    //build PUT request for employee to update profile
+    //PUT request for employee to update profile
     @PutMapping ("{id}")
     public ResponseEntity <Employee> updateEmployee
     (@PathVariable ("id") long id, @RequestBody Employee employee) {
 
         return new ResponseEntity<Employee>(employeeService.updateEmployee(employee, id), HttpStatus.OK);
     }
+
+    //DELETE request method for employee data
+
+
 }
