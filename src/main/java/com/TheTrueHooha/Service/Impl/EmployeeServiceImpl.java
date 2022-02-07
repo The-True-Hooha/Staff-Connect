@@ -34,21 +34,18 @@ public class EmployeeServiceImpl implements EmployeeService {
     //impl that return all the employee by ID
     @Override
     public Employee getEmployeeById(long Id) {
-       Optional <Employee>  employee = employeeRepository.findById(Id);
-       if (employee.isPresent()) {
-           return employee.get();
-        }
-        else {
-          throw new ResourceNotFoundException("Employee", "Id", Id);
+        Optional<Employee> employee = employeeRepository.findById(Id);
+        if (employee.isPresent()) {
+            return employee.get();
+        } else {
+            throw new ResourceNotFoundException("Employee", "Id", Id);
         }
 
-
-         //another method to use (lambda expression)
-        /**
-         return employeeRepository.findById(Id).orElseThrow(() ->
-                 new ResourceNotFoundException("Employee", "Id", Id));
-         **/
     }
+    //another method using lambda expressions
+    // return employeeRepository.findById(Id).orElseThrow(() ->
+    //new ResourceNotFoundException("Employee", "Id", Id));
+
 
 
 
