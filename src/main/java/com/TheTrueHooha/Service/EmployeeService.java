@@ -15,4 +15,7 @@ public interface EmployeeService {
 
     //method that returns the employee object
     Employee updateEmployee (Employee employee, long id);
+
+    //method for delete employee data
+    void deleteEmployee (long id);
 }
