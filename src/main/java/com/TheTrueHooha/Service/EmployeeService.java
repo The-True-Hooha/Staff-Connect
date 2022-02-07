@@ -12,4 +12,7 @@ public interface EmployeeService {
 
     //method that return the employee but by ID
     Employee getEmployeeById (long Id);
+
+    //method that returns the employee object
+    Employee updateEmployee (Employee employee, long id);
 }

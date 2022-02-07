@@ -40,4 +40,13 @@ public class EmployeeController {
         return new ResponseEntity<Employee>(employeeService.getEmployeeById(employeeId), HttpStatus.OK);
 
     }
+
+
+    //build PUT request for employee to update profile
+    @PutMapping ("{id}")
+    public ResponseEntity <Employee> updateEmployee
+    (@PathVariable ("id") long id, @RequestBody Employee employee) {
+
+        return new ResponseEntity<Employee>(employeeService.updateEmployee(employee, id), HttpStatus.OK);
+    }
 }
